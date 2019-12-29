@@ -27,8 +27,7 @@ namespace Library301
 
             CetUserService cetUserService = new CetUserService();
             //txtPassword.Text=cetUserService.hashPassword("admin");
-            int number = int.Parse(txtSchoolNumber.Text);
-            var loginUser = cetUserService.Login(number, txtPassword.Password);
+            var loginUser = cetUserService.Login(txtSchoolNumber.Text, txtPassword.Password);
             if (loginUser == null)
             {
                 MessageBox.Show("Hatalı Giriş Yaptınız");
@@ -41,6 +40,7 @@ namespace Library301
                 this.Close();
             }
         }
+
 
 
 

@@ -15,10 +15,9 @@ namespace Library301.Service
         {
             db = new LibraryDbContext();
         }
-        public User Login(int SchoolNumber, string Password)
+        public User Login(string SchoolNumber, string Password)
         { 
-            string hashedPasword = Password;
-            var loginUser = db.Users.Where(u => u.SchoolNumber == SchoolNumber && u.Password == hashedPasword).FirstOrDefault(); ;
+            var loginUser = db.Users.Where(u => u.SchoolNumber == SchoolNumber && u.Password == Password).FirstOrDefault(); ;
 
             return loginUser;
         }
@@ -28,16 +27,10 @@ namespace Library301.Service
             return user.Password == password;
         }
 
-        internal object Login(string text, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
         public void ChangePassword(User cetUser, string password)
         {
-            var user = db.Users.Find(cetUser.UserId);
+            var user = db.Users.Find(cetUser.Id);
             user.Password = password;
             db.SaveChanges();
         }

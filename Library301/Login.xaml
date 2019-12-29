@@ -10,24 +10,27 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
 
 
         </Grid.RowDefinitions>
-        <TextBlock Margin="0 5" Text="BOGAZICI UNIVERSITY LIBRARY" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEC0E0E"/>
-        <TextBlock  Text="School Number:" Grid.Row="1" Grid.Column="0" Margin="0,5" ></TextBlock>
-        <TextBox x:Name="txtSchoolNumber" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,5"></TextBox>
+        <TextBlock Text="BOGAZICI UNIVERSITY LIBRARY SYSTEM" FontSize="20" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Margin="98,25,0,0" Grid.ColumnSpan="3"/>
+        <TextBlock  Text="School Number:" Margin="34,93,166,17" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <TextBox x:Name="txtSchoolNumber" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,93,46,52" Grid.RowSpan="2"/>
 
-        <TextBlock Margin="0 5" Text="Password:" Grid.Row="2" Grid.Column="0"  ></TextBlock>
-        <PasswordBox Margin="0 5" x:Name="txtPassword" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" PasswordChar="*" ></PasswordBox>
+        <TextBlock Margin="34,59,166,31" Text="Password:" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"  />
+        <PasswordBox Margin="27,59,46,66" x:Name="txtPassword" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" PasswordChar="*" Grid.RowSpan="2" ></PasswordBox>
 
-        <Button x:Name="btnLogin" Content="Log In" Grid.Row="3" Width="300" Height="50" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 5" Click="btnLogin_Click" />
+        <Button x:Name="btnLogin" Content="Log In" Grid.Row="3" Width="100" Height="30" Margin="177,13,116,37" Click="btnLogin_Click" Grid.ColumnSpan="2" />
 
 
     </Grid>

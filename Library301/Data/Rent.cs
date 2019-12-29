@@ -7,15 +7,15 @@ namespace Library301
 {
     public class Rent
     {
-        public int RentId { get; set;}
+        public int Id { get; set;}
 
         public int UserId { get; set; }
 
         public int BookId { get; set; }
 
-        public int StartDate { get; set; }
-       
-        public int EndDate { get; set; }
+        public DateTime StartDate { get; set; }
+
+        public DateTime EndDate { get; set; }
         
     }
 }
