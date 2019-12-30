@@ -27,10 +27,10 @@
         <TextBlock  Text="School Number:" Margin="34,93,166,17" Grid.ColumnSpan="2" Grid.RowSpan="2" />
         <TextBox x:Name="txtSchoolNumber" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,93,46,52" Grid.RowSpan="2"/>
 
-        <TextBlock Margin="34,59,166,31" Text="Password:" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"  />
+        <TextBlock Margin="98,64,0,61" Text="Password:" Grid.Row="1" Grid.RowSpan="2" FontSize="15" FontWeight="Bold" />
         <PasswordBox Margin="27,59,46,66" x:Name="txtPassword" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" PasswordChar="*" Grid.RowSpan="2" ></PasswordBox>
 
-        <Button x:Name="btnLogin" Content="Log In" Grid.Row="3" Width="100" Height="30" Margin="177,13,116,37" Click="btnLogin_Click" Grid.ColumnSpan="2" />
+        <Button x:Name="btnLogin" Content="Log In" Grid.Row="3" Width="100" Height="30" Margin="47,20,47,30" Click="btnLogin_Click" Grid.Column="2" />
 
 
     </Grid>

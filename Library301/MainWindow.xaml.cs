@@ -40,6 +40,8 @@ namespace Library301
             
         }
 
+
+
         public void Load()
         {
 
@@ -77,12 +79,18 @@ namespace Library301
                 {
                     BookId = bookId,
                     UserId = user_id,
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Today.AddDays(14)
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now.AddDays(14)
 
                 };
                 Db.Rents.Add(newRent);
+                Book updateBook = (from b in Db.Books
+                                   where b.Id == bookId
+                                   select b).Single();
+
+                updateBook.Rented = true;
                 Db.SaveChanges();
+                this.Load();
                 MessageBox.Show("Kiralandı.");
             }
             
@@ -94,10 +102,23 @@ namespace Library301
             this.Close();
         }
 
+
         private void passwordBtn_Click(object sender, RoutedEventArgs e)
         {
             ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
             changePasswordWindow.ShowDialog();
         }
+
+        /* 
+        private void delayBtn(object sender, RoutedEventArgs e)
+        {
+
+            Rent newRent = new Rent()
+            {
+                EndDate = startDate.AddDays(14)
+
+            };
+        }
+        */
     }
 }

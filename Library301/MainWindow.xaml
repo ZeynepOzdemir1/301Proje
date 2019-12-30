@@ -15,7 +15,12 @@
         <TabControl Grid.Row="2">
             <TabItem Header="My Books" Width="260" Height="50">
                 <Grid>
-                    <ListView x:Name="MyBooksList" x:FieldModifier="public" Height="220" VerticalAlignment="top" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="348*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="357*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="MyBooksList" x:FieldModifier="public" Height="220" VerticalAlignment="Top" Grid.ColumnSpan="3" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding RentId}">
@@ -33,7 +38,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Content="Rent" Canvas.Left="29" Canvas.Top="300" Height="25" Width="135" Click="rentBtn" Margin="626,244,34,27"/>
+                    <Button Content="Rent" Height="25" Width="135" Click="rentBtn" Margin="169,243,53,28" Grid.Column="2"/>
                 </Grid>
             </TabItem>
 
@@ -58,7 +63,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Content="Rent" Canvas.Left="29" Canvas.Top="300" Height="25" Width="135" Click="rentBtn" Margin="626,244,34,27"/>
+                <!--    <Button Content="Delay" Canvas.Left="29" Canvas.Top="300" Height="25" Click="delayBtn" Margin="626,244,37,27"/> -->
                 </Grid>
             </TabItem>
             <TabItem Header="Settings" Width="260" Height="50">
@@ -68,6 +73,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
     </Grid>
 </Window>
