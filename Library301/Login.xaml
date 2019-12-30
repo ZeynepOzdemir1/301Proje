@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library301"
         mc:Ignorable="d"
+        
         Title="Login" Height="450" Width="800">
+
+
     <Grid Margin="10">
+        <Grid.Background>
+            <ImageBrush ImageSource="kutup.png"></ImageBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -23,14 +29,14 @@
 
 
         </Grid.RowDefinitions>
-        <TextBlock Text="BOGAZICI UNIVERSITY LIBRARY SYSTEM" FontSize="20" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Margin="98,25,0,0" Grid.ColumnSpan="3"/>
-        <TextBlock  Text="School Number:" Margin="34,93,166,17" Grid.ColumnSpan="2" Grid.RowSpan="2" />
-        <TextBox x:Name="txtSchoolNumber" Grid.Column="1" Grid.ColumnSpan="2" Margin="27,93,46,52" Grid.RowSpan="2"/>
+        <TextBlock Text="BOGAZICI UNIVERSITY LIBRARY SYSTEM" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="190,25,0,0" Grid.ColumnSpan="3"/>
+        <TextBlock  Text="School Number:" Margin="66,73,167,53" FontSize="15" FontWeight="Bold" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" Foreground="White" />
+        <TextBox x:Name="txtSchoolNumber" Grid.Column="2" Margin="10,73,0,66" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Left" Height=" 20" Width="133"/>
 
-        <TextBlock Margin="98,64,0,61" Text="Password:" Grid.Row="1" Grid.RowSpan="2" FontSize="15" FontWeight="Bold" />
-        <PasswordBox Margin="27,59,46,66" x:Name="txtPassword" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" PasswordChar="*" Grid.RowSpan="2" ></PasswordBox>
+        <TextBlock Margin="82,52,9,73" Text="Password:" Grid.Row="2" FontSize="15" FontWeight="Bold" Foreground="White" Grid.Column="1" Grid.RowSpan="2" />
+        <PasswordBox Margin="14,56,47,4" x:Name="txtPassword" Grid.Row="2" Grid.Column="2" PasswordChar="*" Width="133" Height="20" />
 
-        <Button x:Name="btnLogin" Content="Log In" Grid.Row="3" Width="100" Height="30" Margin="47,20,47,30" Click="btnLogin_Click" Grid.Column="2" />
+        <Button x:Name="btnLogin" Content="Log In" Grid.Row="3" Width="100" Height="30" Margin="192,29,95,0" Click="btnLogin_Click" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
 
 
     </Grid>
