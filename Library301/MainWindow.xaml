@@ -38,7 +38,6 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Content="Rent" Height="25" Width="135" Click="rentBtn" Margin="169,243,53,28" Grid.Column="2"/>
                 </Grid>
             </TabItem>
 
@@ -63,7 +62,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                <!--    <Button Content="Delay" Canvas.Left="29" Canvas.Top="300" Height="25" Click="delayBtn" Margin="626,244,37,27"/> -->
+                    <Button Content="Rent" Canvas.Left="29" Canvas.Top="300" Height="25" Click="rentBtn" Margin="626,244,37,27"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Settings" Width="260" Height="50">
