@@ -71,7 +71,7 @@ namespace Library301
             int bookId = (BookList.SelectedItem as Book).Id;
             if ((BookList.SelectedItem as Book).Rented == true)
             {
-                MessageBox.Show("Kitap mevcut değil.");
+                MessageBox.Show("Book is not available.");
             }
             else
             {
@@ -91,7 +91,7 @@ namespace Library301
                 updateBook.Rented = true;
                 Db.SaveChanges();
                 this.Load();
-                MessageBox.Show("Kiralandı.");
+                MessageBox.Show("Book is rented.");
             }
             
         }

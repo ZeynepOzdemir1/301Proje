@@ -6,71 +6,78 @@
         xmlns:local="clr-namespace:Library301"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="BOGAZICI UNIVERSITY LIBRARY SYSTEM" FontSize="20" FontWeight="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" />
-        <TabControl Grid.Row="2">
-            <TabItem Header="My Books" Width="260" Height="50">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="348*"/>
-                        <ColumnDefinition Width="89*"/>
-                        <ColumnDefinition Width="357*"/>
-                    </Grid.ColumnDefinitions>
-                    <ListView x:Name="MyBooksList" x:FieldModifier="public" Height="220" VerticalAlignment="Top" Grid.ColumnSpan="3" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding RentId}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding BookName}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Category" Width="150" DisplayMemberBinding="{Binding Category}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Author" Width="150" DisplayMemberBinding="{Binding Author}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Rent Date" Width="100" DisplayMemberBinding="{Binding StartDate}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Due Date" Width="100" DisplayMemberBinding="{Binding EndDate}">
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </Grid>
-            </TabItem>
+    
+    <Viewbox Stretch="Fill" StretchDirection="Both" HorizontalAlignment="Center">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="kutup.png"></ImageBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="BOGAZICI UNIVERSITY LIBRARY SYSTEM" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+            <TabControl Grid.Row="2">
+                <TabItem Header="My Books" Width="260" Height="50">
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="348*"/>
+                            <ColumnDefinition Width="89*"/>
+                            <ColumnDefinition Width="357*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListView x:Name="MyBooksList" x:FieldModifier="public" Height="220" VerticalAlignment="Top" Grid.ColumnSpan="3" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding RentId}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding BookName}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Category" Width="150" DisplayMemberBinding="{Binding Category}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Author" Width="150" DisplayMemberBinding="{Binding Author}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Rent Date" Width="100" DisplayMemberBinding="{Binding StartDate}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Due Date" Width="100" DisplayMemberBinding="{Binding EndDate}">
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
 
 
 
 
-            <TabItem Header="Books" Width="260" Height="50">
-                <Grid>
-                    <ListView x:Name="BookList" x:FieldModifier="public" Height="220" VerticalAlignment="top" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding BookName}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Category" Width="200" DisplayMemberBinding="{Binding Category}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Author" Width="150" DisplayMemberBinding="{Binding Author}">
-                                </GridViewColumn>
-                                <GridViewColumn Header="Rented" Width="150" DisplayMemberBinding="{Binding Rented}">
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                    <Button Content="Rent" Canvas.Left="29" Canvas.Top="300" Height="25" Click="rentBtn" Margin="626,244,37,27"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Settings" Width="260" Height="50">
-                <Grid>
-                    <Button Content="Log out" Height="20" Width="100" Click="logoutBtn_Click"></Button>
-                    <Button Content="Change Password" Click="passwordBtn_Click" Margin="347,190,319,70"/>
-                </Grid>
-            </TabItem>
-        </TabControl>
-    </Grid>
+                <TabItem Header="Books" Width="260" Height="50">
+                    <Grid>
+                        <ListView x:Name="BookList" x:FieldModifier="public" Height="220" VerticalAlignment="top" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding BookName}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Category" Width="200" DisplayMemberBinding="{Binding Category}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Author" Width="150" DisplayMemberBinding="{Binding Author}">
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Rented" Width="150" DisplayMemberBinding="{Binding Rented}">
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <Button Content="Rent" Canvas.Left="29" Canvas.Top="300" Height="25" Click="rentBtn" Margin="626,244,37,27"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Settings" Width="260" Height="50">
+                    <Grid>
+                        <Button HorizontalAlignment="Center" Content="Log out" Height="20" Width="100" Click="logoutBtn_Click"></Button>
+                        <Button HorizontalAlignment="Center" Content="Change Password" Click="passwordBtn_Click" Margin="347,190,319,70"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Viewbox>
 </Window>
