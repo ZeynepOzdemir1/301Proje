@@ -49,3 +49,4 @@ C:\Users\Zeynep\source\repos\ZeynepOzdemir301\Library301\obj\Debug\netcoreapp3.1
 C:\Users\Zeynep\source\repos\ZeynepOzdemir301\Library301\obj\Debug\netcoreapp3.1\Library301.dll
 C:\Users\Zeynep\source\repos\ZeynepOzdemir301\Library301\obj\Debug\netcoreapp3.1\Library301.pdb
 C:\Users\Zeynep\source\repos\ZeynepOzdemir301\Library301\obj\Debug\netcoreapp3.1\Library301.csprojAssemblyReference.cache
+C:\Users\Zeynep\source\repos\ZeynepOzdemir301\Library301\obj\Debug\netcoreapp3.1\App.baml

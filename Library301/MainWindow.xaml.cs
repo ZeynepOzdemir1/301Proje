@@ -47,8 +47,9 @@ namespace Library301
 
             var myBooks = (from b in Db.Books
                            join r in Db.Rents
-            on b.Id equals r.BookId
+                            on b.Id equals r.BookId
                            join u in Db.Users on r.UserId equals u.Id
+                           where r.UserId == user_id
                            select new
                            {
                                RentId = r.Id,
@@ -107,6 +108,11 @@ namespace Library301
         {
             ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
             changePasswordWindow.ShowDialog();
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         /* 

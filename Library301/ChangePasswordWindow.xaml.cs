@@ -34,29 +34,34 @@ namespace Library301
         {
             if(!cetUserService.CheckPassword(User, txtCurrentPassword.Text))
             {
-                MessageBox.Show("Mevcut Şifreniz Hatalı!");
+                MessageBox.Show("You entered an incorrect answer.");
                 return;
             }
             if (txtNewPassword1.Text.Length < 5)
             {
-                MessageBox.Show("Şifre en az 5 karakter olmalı");
+                MessageBox.Show("The password must contain at least 5 character.");
                 return;
             }
 
             if (txtNewPassword1.Text !=txtNewPassword2.Text)
             {
-                MessageBox.Show("Yeni Şifreler uyumlu değil");
+                MessageBox.Show("Passwords must be the same.");
                 return;
             }
 
             cetUserService.ChangePassword(User, txtNewPassword1.Text);
-            MessageBox.Show("Şifreniz değiştirilmiştir.");
+            MessageBox.Show("Your password has been changed.");
             this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNewPassword1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
