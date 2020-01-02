@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace Library301
 {
-    /// <summary>
-    /// Login.xaml etkileşim mantığı
-    /// </summary>
     public partial class Login : Window
     {
         public Login()
@@ -28,17 +25,36 @@ namespace Library301
 
             CetUserService cetUserService = new CetUserService();
             //txtPassword.Text=cetUserService.hashPassword("admin");
-            var loginUser = cetUserService.Login(txtSchoolNumber.Text, txtPassword.Password);
-            if (loginUser == null)
+
+
+            if (txtSchoolNumber.Text == "" && txtPassword.Password == "")
             {
-                MessageBox.Show("Hatalı Giriş Yaptınız");
+                MessageBox.Show("School number and Password cannot be empty.");
+            }
+            else if(txtSchoolNumber.Text == "")
+            {
+                MessageBox.Show("School number cannot be empty.");
+            }
+
+            else if (txtPassword.Password == "")
+            {
+                MessageBox.Show("Password cannot be empty.");
             }
             else
+
             {
-                /// Doğru giriş yapıldı.
-                MainWindow mainWindow = new MainWindow(loginUser);
-                mainWindow.Show();
-                this.Close();
+                var loginUser = cetUserService.Login(txtSchoolNumber.Text, txtPassword.Password);
+                if (loginUser == null)
+                {
+                    MessageBox.Show("Incorrect School Number/Password ");
+                }
+                else
+                {
+                    /// Doğru giriş yapıldı.
+                    MainWindow mainWindow = new MainWindow(loginUser);
+                    mainWindow.Show();
+                    this.Close();
+                }
             }
         }
 

@@ -33,15 +33,12 @@ namespace Library301
         {
             InitializeComponent();
 
-            Load();
             logedUser = loginUser;
             user_id = loginUser.Id;
+            Load();
 
             
         }
-
-
-
         public void Load()
         {
 
@@ -65,36 +62,45 @@ namespace Library301
             MyBooksList.ItemsSource = myBooks;
         }
 
-
-
         private void rentBtn(object sender, RoutedEventArgs e)
         {
-            int bookId = (BookList.SelectedItem as Book).Id;
-            if ((BookList.SelectedItem as Book).Rented == true)
+            if (BookList.SelectedItem == null)
             {
-                MessageBox.Show("Book is not available.");
+                MessageBox.Show("You must select a book first.");
             }
-            else
+           else
             {
-                Rent newRent = new Rent()
+                int bookId = (BookList.SelectedItem as Book).Id;
+
+
+                if ((BookList.SelectedItem as Book).Rented == true)
                 {
-                    BookId = bookId,
-                    UserId = user_id,
-                    StartDate = DateTime.Now,
-                    EndDate = DateTime.Now.AddDays(14)
+                    MessageBox.Show("Book is not available.");
+                }
+                else
+                {
+                    Rent newRent = new Rent()
+                    {
+                        BookId = bookId,
+                        UserId = user_id,
+                        StartDate = DateTime.Now,
+                        EndDate = DateTime.Now.AddDays(14)
 
-                };
-                Db.Rents.Add(newRent);
-                Book updateBook = (from b in Db.Books
-                                   where b.Id == bookId
-                                   select b).Single();
+                    };
+                    Db.Rents.Add(newRent);
+                    Book updateBook = (from b in Db.Books
+                                       where b.Id == bookId
+                                       select b).Single();
 
-                updateBook.Rented = true;
-                Db.SaveChanges();
-                this.Load();
-                MessageBox.Show("Book is rented.");
+                    updateBook.Rented = true;
+                    Db.SaveChanges();
+                    this.Load();
+                    MessageBox.Show("Book is rented.");
+                }
+
             }
-            
+
+
         }
 
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
@@ -107,24 +113,8 @@ namespace Library301
         private void passwordBtn_Click(object sender, RoutedEventArgs e)
         {
             ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
-            changePasswordWindow.ShowDialog();
+            changePasswordWindow.Show();
         }
 
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        /* 
-        private void delayBtn(object sender, RoutedEventArgs e)
-        {
-
-            Rent newRent = new Rent()
-            {
-                EndDate = startDate.AddDays(14)
-
-            };
-        }
-        */
     }
 }

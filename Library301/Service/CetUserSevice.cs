@@ -15,9 +15,9 @@ namespace Library301.Service
         {
             db = new LibraryDbContext();
         }
-        public User Login(string SchoolNumber, string Password)
+        public User Login(string a, string Password)
         { 
-            var loginUser = db.Users.Where(u => u.SchoolNumber == SchoolNumber && u.Password == Password).FirstOrDefault(); ;
+            var loginUser = db.Users.Where(u => u.SchoolNumber == a && u.Password == Password).FirstOrDefault(); ;
 
             return loginUser;
         }
